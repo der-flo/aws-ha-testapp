@@ -6,7 +6,7 @@ disable :run, :reload
 
 get '/' do
   content_type 'text/plain'
-  "Hello world from #{`hostname -f`.strip}!"
+  "Hello world from #{`hostname`.strip}!"
 end
 
 run Sinatra::Application
