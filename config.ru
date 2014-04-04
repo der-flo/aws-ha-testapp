@@ -9,7 +9,7 @@ get '/' do
   sleep 1
   HardWorker.perform_async
   content_type 'text/plain'
-  "Hello world from #{`hostname`.strip}!\nFoo bar."
+  "Hello world from #{`hostname`.strip}!\nFoo bar baz."
 end
 
 run Rack::URLMap.new('/' => Sinatra::Application, '/sidekiq' => Sidekiq::Web)
