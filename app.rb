@@ -15,4 +15,4 @@ class HardWorker
   end
 end
 
-# bundle exec sidekiq -r ./app.rb -c 3
+# bundle exec sidekiq -r ./app.rb -c 2

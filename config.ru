@@ -6,11 +6,10 @@ disable :run, :reload
 
 get '/' do
   # simulated expensive request
-  sleep 1
+  sleep .1
   HardWorker.perform_async
   content_type 'text/plain'
-  "Hello world from #{`hostname`.strip}!\nFoo bar baz."
+  "Hello world from #{`hostname`.strip}!\n"
 end
 
 run Rack::URLMap.new('/' => Sinatra::Application, '/sidekiq' => Sidekiq::Web)
-
