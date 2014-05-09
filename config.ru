@@ -6,7 +6,7 @@ disable :run, :reload
 
 get '/' do
   # simulated expensive request
-  sleep .1
+  sleep 0.1
   HardWorker.perform_async
   content_type 'text/plain'
   "Hello world from #{`hostname`.strip}!\n"
